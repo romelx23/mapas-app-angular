@@ -1,0 +1,13 @@
+<li class="list-none absolute z-10 right-0 mr-4 p-4">
+    <ul class="btn_marker bg-green-200 text-green-700 font-medium" (click)="agregarMarcador()">+agregar</ul>
+    <ul 
+    class="btn_marker" 
+    (click)="irMarcador(marcador.marker)" 
+    [ngStyle]="{
+        'background-color':marcador.color
+    }"
+    *ngFor="let marcador of marcadores;let i = index">
+    <h1 (dblclick)="borrarMarcador(i)">marker {{i+1}}</h1>
+</ul>
+</li>
+<div #mapa class="w-full min-h-screen"></div>

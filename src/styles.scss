@@ -1,1 +1,55 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.active {
+  @apply bg-blue-300;
+}
+
+.btn {
+  @apply px-3 py-1.5 bg-blue-600 text-white font-semibold rounded-md;
+}
+
+.link {
+  @apply px-2 py-3 hover:cursor-pointer hover:bg-blue-300 transition;
+}
+
+.btn_marker{
+    @apply py-3 px-3 cursor-pointer
+}
+
+.marker {
+  background-image: url("https://media.discordapp.net/attachments/730810037693579304/958221204806852649/aedad-1080x609.png");
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  border: 2px solid rgb(47, 34, 163);
+}
+.marker::after{
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    left: 14px;
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 25px solid rgb(47, 34, 163);
+    animation: bounce 1s infinite;
+}
+// animation bounce
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
